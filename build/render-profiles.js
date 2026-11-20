@@ -202,7 +202,7 @@ function renderIndex(profiles) {
     body += '<p class="lede">No profiles have been published. SAKSHI is a proposal under development, and the first regional hubs are not yet operating.</p>' +
       '<h2>What a profile will contain</h2>' +
       '<ul>' +
-      '<li><strong>Public.</strong> Every profile will be published on this site under the consortium’s institutional name. Its data file and edit history will be publicly available.</li>' +
+      '<li><strong>Public.</strong> Every profile will identify the scope of its review and the evidence examined. Its data file and edit history will be publicly available.</li>' +
       '<li><strong>Regularly updated.</strong> Profiles will be updated when the deployed system changes.</li>' +
       '<li><strong>Comparable across settings.</strong> Each profile will use the same four-domain protocol and data format, allowing readers to compare findings across countries.</li>' +
       '<li><strong>Subject to appeals.</strong> On publication the company is notified and given a set window to respond. Its response is published with the profile, and verified corrections are appended with a date. See <a href="/governance/#appeals">Governance</a>.</li>' +

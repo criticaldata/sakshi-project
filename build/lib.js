@@ -93,10 +93,11 @@ function statusLine() {
 function footer() {
   return '<footer class="site-footer">\n<div class="container site-footer__inner">\n' +
     '<div class="site-footer__identity">' + brand() + institutionalMark('footer') + '</div>\n' +
-    '<p>SAKSHI, a project of MIT Critical Data, Laboratory for Computational Physiology, MIT.</p>\n' +
+    '<p>SAKSHI research proposal. MIT Critical Data, Laboratory for Computational Physiology, Massachusetts Institute of Technology.</p>\n' +
     '<div class="site-footer__links">' +
     (SITE.repoUrl ? '<a class="text-link" href="' + esc(SITE.repoUrl) + '" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>' : '') +
     '<a class="text-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0 <span aria-hidden="true">↗</span></a>' +
+    '<a class="text-link" href="https://accessibility.mit.edu">Accessibility</a>' +
     '</div>\n</div>\n</footer>\n';
 }
 

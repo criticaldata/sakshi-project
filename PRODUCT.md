@@ -6,9 +6,9 @@ factual; it is read by agents before they change the interface.
 ## What this is
 
 The public website of SAKSHI (Structured Accountability through Knowledge,
-Scrutiny, and Health Integrity), a community-operated investigative platform
-for accountability in clinical AI deployment. SAKSHI is a project of MIT
-Critical Data, the Laboratory for Computational Physiology at MIT.
+Scrutiny, and Health Integrity), a research proposal for community-led evidence review
+of deployed clinical AI. SAKSHI is in development at MIT Critical Data,
+the Laboratory for Computational Physiology at MIT.
 
 The site explains the proposal, publishes the investigative protocol, hosts
 a fillable checklist for auditors, and will publish company profiles once
@@ -55,3 +55,13 @@ on every page, and design work must not soften or hide it.
 - Root-relative links; built with SITE_BASE for the GitHub Pages subpath.
 - Content licensed CC BY 4.0. Design system adapted from the DOJO site by
   MIT Critical Data (MIT License).
+
+- Describe the site as a research project in development. Keep the specific
+  MIT Critical Data affiliation without implying Institute endorsement of
+  findings, companies, or products.
+- Do not promise institutional legal support, representation, liability
+  arrangements, or anonymity. Do not add discussion of legal exposure.
+- Present evidence gaps and unanswered requests neutrally. Invite factual
+  responses and keep corrections visible. Training is project preparation.
+- Keep the Accessibility link to https://accessibility.mit.edu in the shared
+  footer on every page.
