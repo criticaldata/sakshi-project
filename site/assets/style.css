@@ -1323,7 +1323,8 @@ html.js-enabled [data-reveal].is-visible {
 .section--architecture .deeper .button--quiet:hover, .section--architecture .deeper .button--quiet:focus-visible { border-color: var(--color-paper); background: rgba(255, 253, 249, 0.1); }
 
 /* Contributors map */
-.world { margin-top: 0.5rem; }
+.section--team .section-heading { margin-bottom: clamp(2rem, 4vw, 3rem); }
+.world { margin-top: 0; }
 .world svg { display: block; width: 100%; height: auto; overflow: visible; }
 .world__dots { fill: none; stroke: var(--color-line); stroke-width: 4.2; stroke-linecap: round; }
 .world__links path { fill: none; stroke: var(--color-terracotta); stroke-width: 1; stroke-dasharray: 3 5; opacity: 0.45; }
@@ -1335,7 +1336,47 @@ html.js-enabled [data-reveal].is-visible {
 .hub text { fill: var(--color-sage); }
 .world__legend { display: flex; flex-wrap: wrap; gap: 0.5rem 0.6rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
 .world__legend li { padding: 0.3rem 0.75rem; border: 1px solid var(--color-line); border-radius: 999px; color: var(--color-muted); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-@media (max-width: 760px) { .pin text, .hub text { font-size: 15px; } }
+/* Separate the governance notes from the map and keep paragraphs readable. */
+.team-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem clamp(2rem, 5vw, 4rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-line);
+}
+.team-note h3 { margin: 0 0 0.75rem; }
+.team-note p { max-width: 62ch; margin: 0; color: var(--color-muted); line-height: 1.7; }
+.team-notes .team-note a { display: inline; padding-block: 0; text-underline-offset: 0.18em; }
+
+/* Country markers breathe gently; the geographic dots and labels stay still. */
+@keyframes map-dot-pulse {
+  0%, 50%, 100% { transform: scale(1); opacity: 1; }
+  22% { transform: scale(1.12); opacity: 0.85; }
+}
+@keyframes map-ring-pulse {
+  0% { transform: scale(0.85); opacity: 0.45; }
+  38%, 100% { transform: scale(1.5); opacity: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .world .pin__dot, .world .hub__dot,
+  .world .pin__ring, .world .hub__ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation-duration: 6s;
+    animation-delay: var(--map-pulse-delay, 0s);
+    animation-iteration-count: infinite;
+  }
+  .world .pin__dot, .world .hub__dot { animation-name: map-dot-pulse; animation-timing-function: ease-in-out; }
+  .world .pin__ring, .world .hub__ring { animation-name: map-ring-pulse; animation-timing-function: ease-out; }
+  .world .pin:nth-child(3n + 2) { --map-pulse-delay: -2s; }
+  .world .pin:nth-child(3n) { --map-pulse-delay: -4s; }
+  .world .hub { --map-pulse-delay: -1s; }
+}
+@media (max-width: 760px) {
+  .pin text, .hub text { font-size: 15px; }
+  .team-notes { grid-template-columns: 1fr; gap: 1.75rem; padding-top: 1.5rem; }
+}
 /* Contact */
 .contact-card .button--primary { color: var(--color-paper); }
 .contact-person .copy { font: inherit; font-size: 0.78rem; font-weight: 700; margin-left: 0.6rem; padding: 0.2rem 0.6rem; border: 1px solid rgba(255, 253, 249, 0.42); border-radius: 999px; background: transparent; color: var(--color-paper); cursor: pointer; }
