@@ -1,6 +1,6 @@
 <p class="eyebrow">Template</p>
 <h1>Minimum Viable Template</h1>
-<p class="lede">A condensed, three-domain investigative checklist for community auditors of health AI. For community auditor use. Not a regulatory instrument.</p>
+<p class="lede">A three-domain checklist for community auditors conducting an initial review of health AI. It is not a regulatory instrument.</p>
 
 <div class="toolbar" id="toolbar" hidden>
   <p class="muted" id="save-state">Entries are saved in this browser only. Nothing is sent anywhere.</p>
@@ -13,15 +13,15 @@
 
 <section id="purpose">
   <h2>Purpose and how to use this template</h2>
-  <p>This template is the working version of the full SAKSHI checklists. The full instrument runs to more than one hundred items across three domains. That depth is right for a complete profile and too much for a first pass by a small team. This version keeps the highest-signal items so that a group of two or three people can complete a credible draft profile in a single sitting, then expand into the full checklists where a finding warrants it.</p>
-  <p>Accountability for health AI requires looking at the whole ecosystem, not the algorithm alone. A product can carry strong clinical evidence and still operate under a regulatory pathway with no enforcement capacity. A regulator can hold robust standards while the hospital that deploys the product skips procurement. The three domains below are meant to be used together. The gaps between them are where the most important findings appear.</p>
+  <p>The full SAKSHI checklists contain more than one hundred items across three domains. This shorter version selects items for an initial review by two or three auditors in a single sitting. Teams can then use the full checklists to investigate findings that require more detail.</p>
+  <p>Review the evidence for the product alongside its regulatory pathway and deployment setting. Strong clinical evidence can coexist with limited regulatory enforcement. Regulatory standards may also be bypassed when a hospital skips procurement. Assessing the three domains together can reveal these discrepancies.</p>
   <div class="box">
-    <h3>Ethos: there is always an alternative</h3>
-    <p>Low-quality AI is not the only option for underserved populations. The goal of a SAKSHI profile is not to remove a tool and leave a gap. It is to make high-quality, accountable AI the affordable alternative. Investigate in that spirit.</p>
+    <h3>Affordable, accountable AI</h3>
+    <p>The goal is to make high-quality, accountable AI affordable for underserved populations. A profile should help identify how care could improve without leaving patients with fewer options.</p>
   </div>
   <div class="box">
-    <h3>Stance: partner, not prosecutor</h3>
-    <p>SAKSHI engages companies and health systems as partners for patient safety and product improvement. Findings are recorded as flags and open questions until verified, not as accusations. Standard outreach to a company opens with a line of this kind:</p>
+    <h3>Working with companies</h3>
+    <p>SAKSHI would work with companies and health systems to support patient safety and product improvement. Record unverified concerns as flags or open questions. The following wording illustrates an initial request to a company:</p>
     <blockquote><p>"We are a community of students, clinicians, and researchers organized to support safer health AI deployment. We would like to learn about your product and how it is used. Our goal is to help, not to expose. External scrutiny can help you build a better product."</p></blockquote>
   </div>
   <h3>Scoring</h3>
@@ -33,10 +33,10 @@
     <div><dt>Refused</dt><dd>The company or regulator declined to provide it.</dd></div>
     <div><dt>Not applicable</dt><dd>The item does not apply to this product.</dd></div>
   </dl>
-  <p>The absence of evidence is itself a finding. Record what you searched and where, so that Absent is defensible rather than a guess.</p>
+  <p>For an item marked Absent, document the sources searched and the search method.</p>
   <h3>Method, in brief</h3>
   <p>Start with public sources: the company website, marketing and investor materials, press coverage, regulatory filings, published papers, and public-records requests where available. Document what is findable and what is missing. Then contact the company directly under the outreach protocol above and record their response.</p>
-  <p>Three checks carry most of the weight in a first pass: whether claims are backed by reproducible, peer-reviewed science; whether performance holds across demographic subgroups; and whether the product was validated in the population where it is actually deployed.</p>
+  <p>Prioritize reproducible, peer-reviewed evidence for the company’s claims. Check performance across demographic subgroups and whether validation included the population where the product is deployed.</p>
   <p>This template condenses the four-domain <a href="/protocol/">protocol</a> for a first pass. Domain A covers the clinical evidence audit and the financial disclosure map; Domain B the regulatory pathway analysis; Domain C the deployment setting and patient experience reporting.</p>
 </section>
 
@@ -136,7 +136,7 @@
 
 <section id="synthesis">
   <h2>Synthesis. Reading the gaps</h2>
-  <p>A product can pass each domain on its own and still fail at the seams. After the three domains are drafted, work through the three gaps below. Record each one explicitly, with the evidence on both sides.</p>
+  <p>After reviewing the three domains, compare the company’s claims with the evidence, authorization, and conditions of deployment. Document each discrepancy below, with evidence from both domains where applicable.</p>
   <ol class="phases gaps">
     <li>
       <div>
@@ -155,18 +155,19 @@
     <li>
       <div>
         <h3><label for="gap-3">Authorization-to-deployment gap (Domain B against Domain C)</label></h3>
-        <p>Is the product used in a population, setting, or role that its authorization never covered? Cross-border and off-label-by-context use lives here.</p>
+        <p>Is the product used in a population, setting, or role that its authorization never covered? Include cross-border use and uses outside the population or setting covered by the authorization.</p>
         <textarea id="gap-3" rows="4" data-field="synthesis.authorization_to_deployment"></textarea>
       </div>
     </li>
   </ol>
   <div class="box">
     <h3><label for="summary-finding">Summary finding</label></h3>
-    <p>In two or three sentences, state the most consequential gap this profile surfaced and what verification would resolve it. This is the line that carries into the SAKSHI profile and any outreach.</p>
+    <p>In two or three sentences, state the most consequential gap this profile surfaced and what verification would resolve it. Use this summary in the SAKSHI profile and any outreach.</p>
     <textarea id="summary-finding" rows="4" data-field="synthesis.summary_finding"></textarea>
   </div>
 </section>
 
 <p class="note">For community auditor use. Not a regulatory instrument. With JavaScript enabled, entries are saved in this browser and can be downloaded as Markdown or JSON from the toolbar at the top of the page. Without it, the page is a printable checklist. A completed first pass feeds a full profile in the <a href="/profiles/profile-schema.json">profile data format</a>.</p>
 <script src="/assets/template.js"></script>
+
 

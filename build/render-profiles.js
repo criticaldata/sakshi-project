@@ -200,15 +200,15 @@ function renderIndex(profiles) {
   var body = '<p class="eyebrow">Profiles</p><h1>Published profiles</h1>';
   if (!profiles.length) {
     body += '<p class="lede">No profiles have been published. SAKSHI is a proposal under development, and the first regional hubs are not yet operating.</p>' +
-      '<h2>What a profile will be</h2>' +
+      '<h2>What a profile would contain</h2>' +
       '<ul>' +
-      '<li><strong>Public.</strong> Every profile is published on this site under the consortium’s institutional name, with its full data file and edit history in the public repository.</li>' +
-      '<li><strong>Regularly updated.</strong> The system under review keeps changing after deployment, so the profile is updated as it changes rather than on a fixed review cycle.</li>' +
-      '<li><strong>Structured for cross-context comparison.</strong> Every profile applies the same four-domain protocol and the same data format, so a finding from one country can be read next to one from another.</li>' +
+      '<li><strong>Public.</strong> Every profile would be published on this site under the consortium’s institutional name. Its data file and edit history would be publicly available.</li>' +
+      '<li><strong>Regularly updated.</strong> Profiles would be updated when the deployed system changes.</li>' +
+      '<li><strong>Comparable across settings.</strong> Each profile would use the same four-domain protocol and data format, allowing readers to compare findings across countries.</li>' +
       '<li><strong>Subject to appeals.</strong> On publication the company is notified and given a set window to respond. Its response is published with the profile, and verified corrections are appended with a date. See <a href="/governance/#appeals">Governance</a>.</li>' +
       '</ul>' +
       '<h2>Format</h2>' +
-      '<p>Profiles are rendered from structured data files, one per profile, not from hand-edited pages. The format is documented in the <a href="/profiles/profile-schema.json">profile schema</a>. It covers the company and system, deployment contexts, a status badge, findings in each of the four domains, the company’s response, and a dated correction log.</p>' +
+      '<p>Each profile would be generated from a structured data file. The format is documented in the <a href="/profiles/profile-schema.json">profile schema</a>. It covers the company and system, deployment contexts, a status badge, findings in each of the four domains, the company’s response, and a dated correction log.</p>' +
       '<p>The <a href="/case-study/">case study</a> walks through what a completed profile examines, using a hypothetical composite that depicts no real company.</p>';
   } else {
     body += '<p class="lede">' + profiles.length + ' profile' + (profiles.length === 1 ? '' : 's') + ', each rendered from a public data file and subject to the <a href="/governance/#appeals">appeals and correction process</a>.</p>' +
@@ -275,3 +275,4 @@ function main() {
 }
 
 main();
+
