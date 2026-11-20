@@ -100,6 +100,16 @@ the static pages in `site/` carry the same link by hand.
    with the date, a description, and the trigger. Do not rewrite the original
    finding without recording the change.
 
+## Contact form
+
+The contact form linked from the home page and from Get Involved is hosted
+on Tally (form `RWopO9`, in the project owner's Tally workspace). It is a
+plain link, not an embed, so the site still loads no third-party scripts.
+Email notifications are turned off; replies are read and exported from the
+Tally dashboard. To move the form elsewhere,
+change the two links in `content/pages/home.html` and
+`content/pages/get-involved.html`.
+
 ## Deploying to GitHub Pages
 
 `.github/workflows/deploy-pages.yml` builds the site for the project subpath
