@@ -161,39 +161,6 @@ Wrangler CLI instead of the dashboard:
 npx wrangler pages deploy site --project-name sakshi
 ```
 
-### Pointing a custom domain at the site
-
-1. In the Pages project, open Custom domains and choose Set up a custom
-   domain. Enter the hostname, for example `sakshi.example.org`.
-2. If the domain's DNS is already on Cloudflare, the dashboard adds the
-   record for you. Otherwise, at the DNS provider, add a CNAME record for the
-   hostname pointing at the project's `*.pages.dev` address.
-3. Wait for the certificate to issue (usually minutes). Cloudflare serves the
-   site over HTTPS at the custom hostname.
-
-### Pointing an mit.edu hostname at the site
-
-MIT's DNS is managed centrally, so an `mit.edu` hostname is a request to
-MIT IS&T rather than something the project configures on its own.
-
-1. Decide the hostname, for example `sakshi.mit.edu`, and confirm with the
-   lab's DLC administrator that the project may request it.
-2. In the Cloudflare Pages project, add the hostname under Custom domains.
-   Cloudflare will show the CNAME target (the project's `*.pages.dev`
-   address) and will wait for DNS to point at it.
-3. Ask MIT IS&T to create a CNAME record for the hostname pointing at that
-   `*.pages.dev` target. Requests go through the IS&T Service Desk or the
-   DNS request form, and should name the hostname, the CNAME target, and the
-   responsible contact. Note that a CNAME cannot be used for the bare
-   `mit.edu` apex; a subdomain is required.
-4. Once the record is live, Cloudflare validates it and issues a
-   certificate. Check the hostname in a browser and confirm the `_headers`
-   security headers are present.
-
-If IS&T prefers to host the site on MIT infrastructure instead, the `site/`
-directory after `npm run build` is a complete static site and can be served
-by any web server.
-
 ## License
 
 Content is licensed under Creative Commons Attribution 4.0 International
