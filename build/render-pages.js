@@ -2,7 +2,7 @@
 // Renders the static pages in content/pages/ into site/ using the shared
 // layout in build/lib.js. content/pages.json lists each page's file, output
 // path, title, description and citation note. Set SITE_BASE (for example
-// "/sakshi-site") to render for a site served under a subpath.
+// "/sakshi-project") to render for a site served under a subpath.
 const fs = require('fs');
 const path = require('path');
 const lib = require('./lib');

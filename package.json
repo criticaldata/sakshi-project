@@ -9,11 +9,11 @@
   },
   "scripts": {
     "build": "node build/render-pages.js && node build/render-profiles.js",
-    "build:pages": "SITE_BASE=/sakshi-site npm run build",
+    "build:pages": "SITE_BASE=/sakshi-project npm run build",
     "validate": "html-validate \"site/**/*.html\"",
     "check-links": "node build/check-links.js site",
     "test": "npm run build && npm run validate && npm run check-links",
-    "test:pages": "npm run build:pages && npm run validate && SITE_BASE=/sakshi-site npm run check-links",
+    "test:pages": "npm run build:pages && npm run validate && SITE_BASE=/sakshi-project npm run check-links",
     "serve": "python3 -m http.server 8080 --directory site"
   },
   "devDependencies": {

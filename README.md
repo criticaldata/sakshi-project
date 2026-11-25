@@ -73,7 +73,7 @@ Editing a page is editing its body fragment in `content/pages/` and running
 from `build/lib.js`.
 
 The site uses root-relative links. Set `SITE_BASE` (for example
-`/sakshi-site`) when building for a site served under a subpath; the
+`/sakshi-project`) when building for a site served under a subpath; the
 GitHub Pages workflow does this. Leave it unset for a domain root.
 
 ## Design
@@ -126,7 +126,7 @@ change the two links in `content/pages/home.html` and
 
 `.github/workflows/deploy-pages.yml` builds the site for the project subpath
 and deploys it to GitHub Pages on every push to `main`, at
-`https://<owner>.github.io/sakshi-site/`. Requirements:
+`https://criticaldata.github.io/sakshi-project/`. Requirements:
 
 1. The repository must be public (GitHub Pages on a free plan does not
    serve private repositories).

@@ -27,7 +27,7 @@ const BASE = (process.env.SITE_BASE || '').replace(/\/$/, '');
 const SITE = {
   name: 'SAKSHI',
   longName: 'Structured Accountability through Knowledge, Scrutiny, and Health Integrity',
-  repoUrl: 'https://github.com/nikjaiswal/sakshi-site',
+  repoUrl: 'https://github.com/criticaldata/sakshi-project',
   email: 'njaiswal@mit.edu',
   paper: {
     authors: 'Al-Louzi R, Ali HN, Bank AMC, Celi LA, Cocucci C, Gameiro R, Gorijavolu R, Jaiswal N, et al.',
