@@ -101,14 +101,14 @@ a {
   min-height: 5.7rem;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 .site-header__identity,
 .site-footer__identity {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .brand {
@@ -137,10 +137,10 @@ a {
   font-size: 1.2rem;
 }
 
+/* The lab name, in text only (no lockup with the MIT logo). */
 .institutional-mark {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
   color: var(--color-muted);
   font-size: 0.68rem;
   font-weight: 700;
@@ -148,26 +148,28 @@ a {
   line-height: 1.2;
   text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.institutional-mark img {
+/* The MIT logo, top right of every page. The SVG carries its own clear
+   space (one bar width on every side), so the rule and the nav never come
+   closer to the mark than the brand rules allow. */
+.mit-logo {
   display: block;
   flex: 0 0 auto;
-  width: auto;
-  height: 1.6rem;
-  object-fit: contain;
-  object-position: center;
-  mix-blend-mode: multiply;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--color-line);
+  line-height: 0;
 }
 
-/* the logo already reads "MIT Critical Data"; keep the text for screen readers only */
-.institutional-mark span {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
+.mit-logo img {
+  display: block;
+  width: auto;
+  height: 3.25rem;
+}
+
+.site-nav {
+  flex: 1 1 auto;
 }
 
 .institutional-mark:hover,
@@ -176,7 +178,7 @@ a {
 }
 
 .institutional-mark--header {
-  padding-left: 1.25rem;
+  padding-left: 1rem;
   border-left: 1px solid var(--color-line);
 }
 
@@ -200,7 +202,7 @@ a {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.35rem 1.2rem;
+  gap: 0.35rem 0.95rem;
 }
 
 .site-nav a,
@@ -208,7 +210,7 @@ a {
   color: var(--color-muted);
   font-size: 0.86rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   text-decoration: none;
 }
 
@@ -932,11 +934,6 @@ h3 {
   gap: 1rem;
 }
 
-.institutional-mark--footer img,
-.institutional-mark--section img {
-  height: 1.45rem;
-}
-
 .anatomy-mark {
   position: absolute;
   z-index: 0;
@@ -1055,6 +1052,11 @@ html.js-enabled [data-reveal].is-visible {
   .menu-toggle {
     display: grid;
     place-items: center;
+    margin-left: auto;
+  }
+
+  .mit-logo img {
+    height: 3rem;
   }
 
   .site-nav {
@@ -1215,8 +1217,8 @@ html.js-enabled [data-reveal].is-visible {
     height: 2.15rem;
   }
 
-  .institutional-mark img {
-    height: 1.4rem;
+  .mit-logo img {
+    height: 2.6rem;
   }
 
   .button-row {
@@ -1290,13 +1292,10 @@ html.js-enabled [data-reveal].is-visible {
 
 /* ===================== SAKSHI additions ===================== */
 
-:root { color-scheme: light; --color-mit-red: #a31f34; }
+:root { color-scheme: light; }
 
 /* Brand mark: the witness eye inside the DOJO-style ring */
 .brand__mark svg { width: 1.3rem; height: auto; display: block; }
-
-/* Institutional mark uses the SVG logo; it has fixed dark fills, which suits the light theme */
-.institutional-mark img { mix-blend-mode: normal; }
 
 /* Status line under the header: the site states its status on every page */
 .status-line { border-bottom: 1px solid var(--color-line); background: var(--color-paper); }

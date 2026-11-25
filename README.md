@@ -33,7 +33,7 @@ content/
 tools/
   make-world-map.py     Regenerates the contributors map from Natural Earth land data
 site/                   Build output plus committed static assets
-  assets/               style.css, site.js, template.js, mark.svg, the MIT Critical Data logo
+  assets/               style.css, site.js, template.js, mark.svg, the MIT logo (mit-logo.svg)
   assets/vendor/        License for the DOJO design system the stylesheet is adapted from
   _headers              Security headers served by Cloudflare Pages
   _redirects            Old /team/ page redirects to /#team (Cloudflare)
@@ -85,8 +85,20 @@ from the DOJO site by MIT Critical Data, released under the MIT License
 Fonts; everything else is self-hosted.
 
 The footer of every page links to this repository, so each page points at
-its own edit history. The URL is set once as `repoUrl` in `build/lib.js`;
-the static pages in `site/` carry the same link by hand.
+its own edit history. The URL is set once as `repoUrl` in `build/lib.js`,
+and the contact address shown in the footer as `email` next to it.
+
+## MIT brand requirements
+
+The site follows MIT's brand rules (https://brand.mit.edu):
+
+- The MIT logo (`site/assets/mit-logo.svg`, the official black logo) sits at
+  the top right of every page and links to https://web.mit.edu. The SVG's
+  viewBox includes the required clear space of one bar width on every side,
+  so nothing can be placed closer to the mark than the rules allow.
+- The lab is always named in text as "MIT Critical Data". The logo is never
+  combined with the lab name or any other text or graphic.
+- The footer carries a contact email address.
 
 ## Adding or correcting a profile
 
