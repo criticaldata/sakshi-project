@@ -177,11 +177,6 @@ a {
   color: var(--color-terracotta);
 }
 
-.institutional-mark--header {
-  padding-left: 1rem;
-  border-left: 1px solid var(--color-line);
-}
-
 .institutional-mark--section {
   margin-bottom: 1.4rem;
 }
@@ -914,16 +909,10 @@ h3 {
 
 .site-footer__inner {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 2rem;
   min-height: 6.5rem;
-}
-
-.site-footer p {
-  margin: 0;
-  font-size: 0.82rem;
-  text-align: center;
 }
 
 .site-footer .brand {
@@ -931,7 +920,13 @@ h3 {
 }
 
 .site-footer__identity {
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+
+.institutional-mark--footer {
+  padding-left: 0.35rem;
 }
 
 .anatomy-mark {
@@ -1043,10 +1038,6 @@ html.js-enabled [data-reveal].is-visible {
 
   .site-header__inner {
     min-height: 4.9rem;
-  }
-
-  .institutional-mark--header {
-    display: none;
   }
 
   .menu-toggle {
@@ -1180,14 +1171,6 @@ html.js-enabled [data-reveal].is-visible {
     gap: 1rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
-  }
-
-  .site-footer__identity {
-    flex-wrap: wrap;
-  }
-
-  .site-footer p {
-    text-align: left;
   }
 
   .anatomy-mark--brain,
