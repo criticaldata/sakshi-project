@@ -73,8 +73,9 @@ Editing a page is editing its body fragment in `content/pages/` and running
 from `build/lib.js`.
 
 The site uses root-relative links. Set `SITE_BASE` (for example
-`/sakshi-project`) when building for a site served under a subpath; the
-GitHub Pages workflow does this. Leave it unset for a domain root.
+`/sakshi-project`) when building for a site served under a subpath, as
+`npm run test:pages` does. Leave it unset for a domain root, which is how
+the GitHub Pages workflow builds for sakshi-project.mit.edu.
 
 ## Design
 
@@ -124,19 +125,44 @@ change the two links in `content/pages/home.html` and
 
 ## Deploying to GitHub Pages
 
-`.github/workflows/deploy-pages.yml` builds the site for the project subpath
-and deploys it to GitHub Pages on every push to `main`, at
-`https://criticaldata.github.io/sakshi-project/`. Requirements:
+`.github/workflows/deploy-pages.yml` builds the site for the domain root and
+deploys it to GitHub Pages on every push to `main`. The site is served at
+https://sakshi-project.mit.edu/. Requirements:
 
 1. The repository must be public (GitHub Pages on a free plan does not
    serve private repositories).
 2. Under Settings, Pages, set Source to "GitHub Actions". The workflow
    attempts to enable this itself on first run; if that step fails, set it
    once by hand and re-run the workflow.
+3. Under Settings, Pages, Custom domain, enter `sakshi-project.mit.edu`
+   and save. Once GitHub reports the DNS check as successful, tick
+   "Enforce HTTPS". `site/CNAME` records the same hostname; GitHub ignores
+   the file for Actions deployments, so the setting is what counts.
 
-A custom domain can be added under Settings, Pages, Custom domain; the site
-then builds for the domain root, so remove `SITE_BASE` from the workflow's
-build step (use `npm test` instead of `npm run test:pages`).
+### DNS records for sakshi-project.mit.edu
+
+MIT IS&T manages the mit.edu zone, so these records are requested from them
+rather than set directly.
+
+| Type  | Name                                                | Value                      |
+| ----- | --------------------------------------------------- | -------------------------- |
+| CNAME | `sakshi-project.mit.edu`                            | `criticaldata.github.io`   |
+| TXT   | `_github-pages-challenge-criticaldata.sakshi-project.mit.edu` | verification code from GitHub |
+
+The CNAME record is what serves the site. The TXT record is optional but
+recommended: it lets the `criticaldata` organisation verify the domain under
+Organization settings, Pages, Verified domains, which stops anyone else's
+Pages site from claiming the hostname. GitHub shows the code to put in the
+TXT record when the verification is started.
+
+The hostname must not have a CAA record that excludes Let's Encrypt, which
+GitHub uses to issue the certificate. If `mit.edu` publishes CAA records,
+ask IS&T to confirm `letsencrypt.org` is permitted for this hostname.
+
+To serve the site under the GitHub project subpath instead
+(`https://criticaldata.github.io/sakshi-project/`), remove the custom
+domain and have the workflow run `npm run test:pages`, which sets
+`SITE_BASE=/sakshi-project`.
 
 ## Deploying to Cloudflare Pages
 
