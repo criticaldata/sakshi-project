@@ -28,6 +28,7 @@ const SITE = {
   name: 'SAKSHI',
   longName: 'Structured Accountability through Knowledge, Scrutiny, and Health Integrity',
   repoUrl: 'https://github.com/nikjaiswal/sakshi-site',
+  email: 'njaiswal@mit.edu',
   paper: {
     authors: 'Al-Louzi R, Ali HN, Bank AMC, Celi LA, Cocucci C, Gameiro R, Gorijavolu R, Jaiswal N, et al.',
     title: 'SAKSHI: A Community-Operated Investigative Platform for Accountability in Clinical AI Deployment',
@@ -68,9 +69,17 @@ function brand() {
   return '<a class="brand" href="/" aria-label="SAKSHI home"><span class="brand__mark" aria-hidden="true">' + eye() +
     '</span><span class="brand__name">SAKSHI</span></a>';
 }
+// The lab is named in text only. Its old lockup combined the MIT logo with
+// the words "Critical Data", which MIT's brand rules do not allow.
 function institutionalMark(variant) {
-  return '<a class="institutional-mark institutional-mark--' + variant + '" href="https://criticaldata.mit.edu" target="_blank" rel="noopener noreferrer" aria-label="MIT Critical Data">' +
-    '<img src="/assets/mit-critical-data-logo.svg" alt="" aria-hidden="true"><span>MIT Critical Data</span></a>';
+  return '<a class="institutional-mark institutional-mark--' + variant + '" href="https://criticaldata.mit.edu" target="_blank" rel="noopener noreferrer">MIT Critical Data</a>';
+}
+// The MIT logo sits at the top right of every page and links to web.mit.edu,
+// as MIT's brand rules require. The SVG's viewBox includes the mandatory
+// clear space (one bar width on every side), so the file can be placed next
+// to a rule or text at any size without crowding the mark.
+function mitLogo() {
+  return '<a class="mit-logo" href="https://web.mit.edu"><img src="/assets/mit-logo.svg" alt="Massachusetts Institute of Technology" width="84" height="52"></a>';
 }
 
 function nav(current) {
@@ -84,8 +93,9 @@ function nav(current) {
 function header(current) {
   return '<header class="site-header">\n<div class="site-header__inner container">\n' +
     '<div class="site-header__identity">' + brand() + institutionalMark('header') + '</div>\n' +
+    nav(current) + '\n' +
     '<button class="menu-toggle" type="button" data-mobile-menu-toggle aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false"><span aria-hidden="true">☰</span></button>\n' +
-    nav(current) + '\n</div>\n</header>\n';
+    mitLogo() + '\n</div>\n</header>\n';
 }
 function statusLine() {
   return '<div class="status-line"><div class="container"><p><strong>Status.</strong> ' + esc(SITE.status) + '</p></div></div>\n';
@@ -95,6 +105,7 @@ function footer() {
     '<div class="site-footer__identity">' + brand() + institutionalMark('footer') + '</div>\n' +
     '<p>SAKSHI research proposal. MIT Critical Data, Laboratory for Computational Physiology, Massachusetts Institute of Technology.</p>\n' +
     '<div class="site-footer__links">' +
+    '<a class="text-link" href="mailto:' + esc(SITE.email) + '">' + esc(SITE.email) + '</a>' +
     (SITE.repoUrl ? '<a class="text-link" href="' + esc(SITE.repoUrl) + '" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>' : '') +
     '<a class="text-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0 <span aria-hidden="true">↗</span></a>' +
     '<a class="text-link" href="https://accessibility.mit.edu">Accessibility</a>' +
