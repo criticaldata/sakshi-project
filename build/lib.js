@@ -69,8 +69,9 @@ function brand() {
   return '<a class="brand" href="/" aria-label="SAKSHI home"><span class="brand__mark" aria-hidden="true">' + eye() +
     '</span><span class="brand__name">SAKSHI</span></a>';
 }
-// The lab is named in text only. Its old lockup combined the MIT logo with
-// the words "Critical Data", which MIT's brand rules do not allow.
+// The lab is named in text only, under the brand in the footer. Its old
+// lockup combined the MIT logo with the words "Critical Data", which MIT's
+// brand rules do not allow.
 function institutionalMark(variant) {
   return '<a class="institutional-mark institutional-mark--' + variant + '" href="https://criticaldata.mit.edu" target="_blank" rel="noopener noreferrer">MIT Critical Data</a>';
 }
@@ -92,7 +93,7 @@ function nav(current) {
 
 function header(current) {
   return '<header class="site-header">\n<div class="site-header__inner container">\n' +
-    '<div class="site-header__identity">' + brand() + institutionalMark('header') + '</div>\n' +
+    '<div class="site-header__identity">' + brand() + '</div>\n' +
     nav(current) + '\n' +
     '<button class="menu-toggle" type="button" data-mobile-menu-toggle aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false"><span aria-hidden="true">☰</span></button>\n' +
     mitLogo() + '\n</div>\n</header>\n';
@@ -103,7 +104,6 @@ function statusLine() {
 function footer() {
   return '<footer class="site-footer">\n<div class="container site-footer__inner">\n' +
     '<div class="site-footer__identity">' + brand() + institutionalMark('footer') + '</div>\n' +
-    '<p>SAKSHI research proposal. MIT Critical Data, Laboratory for Computational Physiology, Massachusetts Institute of Technology.</p>\n' +
     '<div class="site-footer__links">' +
     '<a class="text-link" href="mailto:' + esc(SITE.email) + '">' + esc(SITE.email) + '</a>' +
     (SITE.repoUrl ? '<a class="text-link" href="' + esc(SITE.repoUrl) + '" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>' : '') +

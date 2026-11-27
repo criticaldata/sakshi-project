@@ -24,8 +24,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Build for the project subpath, validate, check links
-        run: npm run test:pages
+      - name: Build for the domain root, validate, check links
+        run: npm test
       - uses: actions/configure-pages@v5
         with:
           enablement: true
