@@ -27,7 +27,6 @@ const BASE = (process.env.SITE_BASE || '').replace(/\/$/, '');
 const SITE = {
   name: 'SAKSHI',
   longName: 'Structured Accountability through Knowledge, Scrutiny, and Health Integrity',
-  repoUrl: 'https://github.com/criticaldata/sakshi-project',
   email: 'njaiswal@mit.edu',
   paper: {
     authors: 'Al-Louzi R, Ali HN, Bank AMC, Celi LA, Cocucci C, Gameiro R, Gorijavolu R, Jaiswal N, et al.',
@@ -106,7 +105,6 @@ function footer() {
     '<div class="site-footer__identity">' + brand() + institutionalMark('footer') + '</div>\n' +
     '<div class="site-footer__links">' +
     '<a class="text-link" href="mailto:' + esc(SITE.email) + '">' + esc(SITE.email) + '</a>' +
-    (SITE.repoUrl ? '<a class="text-link" href="' + esc(SITE.repoUrl) + '" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>' : '') +
     '<a class="text-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0 <span aria-hidden="true">↗</span></a>' +
     '<a class="text-link" href="https://accessibility.mit.edu">Accessibility</a>' +
     '</div>\n</div>\n</footer>\n';
