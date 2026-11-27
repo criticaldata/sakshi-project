@@ -36,7 +36,7 @@ const SITE = {
     url: 'https://openreview.net/forum?id=gnMnqG08xo',
     pdf: 'https://openreview.net/pdf?id=gnMnqG08xo'
   },
-  status: 'SAKSHI is a proposal under development. No profiles have been published, and the framework’s claims have not yet been tested.'
+  status: 'SAKSHI is a proposal under development.'
 };
 
 const NAV = [
