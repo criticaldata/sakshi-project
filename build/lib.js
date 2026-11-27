@@ -36,7 +36,7 @@ const SITE = {
     url: 'https://openreview.net/forum?id=gnMnqG08xo',
     pdf: 'https://openreview.net/pdf?id=gnMnqG08xo'
   },
-  status: 'SAKSHI is a proposal under development.'
+  status: 'SAKSHI is currently under development.'
 };
 
 const NAV = [
@@ -99,7 +99,7 @@ function header(current) {
     mitLogo() + '\n</div>\n</header>\n';
 }
 function statusLine() {
-  return '<div class="status-line"><div class="container"><p><strong>Status.</strong> ' + esc(SITE.status) + '</p></div></div>\n';
+  return '<div class="status-line"><div class="container"><p><strong>Status:</strong> ' + esc(SITE.status) + '</p></div></div>\n';
 }
 function footer() {
   return '<footer class="site-footer">\n<div class="container site-footer__inner">\n' +
